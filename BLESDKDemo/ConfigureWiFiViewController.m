@@ -23,8 +23,12 @@
 @property (nonatomic,weak) IBOutlet UILabel *label4;
 @property (nonatomic,weak) IBOutlet UILabel *label5;
 @property (nonatomic,weak) IBOutlet UILabel *label6;
+@property (nonatomic,weak) IBOutlet UILabel *label7;
+@property (nonatomic,weak) IBOutlet UILabel *label8;
 @property (nonatomic,weak) IBOutlet UITextField *textfield1;
 @property (nonatomic,weak) IBOutlet UITextField *textfield2;
+@property (nonatomic,weak) IBOutlet UITextField *textfield3;
+@property (nonatomic,weak) IBOutlet UITextField *textfield4;
 @property (nonatomic,weak) IBOutlet UIButton *configureBT;
 @property (nonatomic,weak) IBOutlet  UIView *view1;
 
@@ -48,8 +52,10 @@
     self.label2.text = NSLocalizedString(@"select_device", nil);
     self.label3.text = NSLocalizedString(@"select_device", nil);
 //    self.label4.text = @"设备连接的WiFi";
-    self.label5.text = NSLocalizedString(@"step2", nil);
+    self.label5.text = NSLocalizedString(@"step3", nil);
     self.label6.text = NSLocalizedString(@"select_wifi", nil);
+    self.label7.text = NSLocalizedString(@"step2", nil);
+    self.label8.text = NSLocalizedString(@"设备要连接的地址和端口", nil);
     
     [self.configureBT setTitle:NSLocalizedString(@"pair_wifi", nil) forState:UIControlStateNormal];
     self.configureBT.layer.cornerRadius =25.0f;
@@ -61,13 +67,21 @@
     self.textfield1.placeholder = NSLocalizedString(@"input_wifi_name", nil);
     self.textfield2.placeholder = NSLocalizedString(@"input_wifi_psw", nil);
     
+    [self refreshServerAddressAndPort];
+
     self.textfield1.delegate = self;
     self.textfield2.delegate = self;
-    
+    self.textfield3.delegate=self;
+    self.textfield4.delegate=self;
 //    self.textfield1.text = @"medica_2";
 //    self.textfield2.text = @"11221122";
 }
 
+- (void)refreshServerAddressAndPort
+{
+    self.textfield3.text = [self backAddressFromID];
+    self.textfield4.text = [NSString stringWithFormat:@"%ld",(long)[self backPortFromID]];
+}
 
 - (IBAction)pushToSelectDeviceView:(id)sender {
      [self resignTextfiled];
@@ -98,7 +112,7 @@
     }
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [con configPeripheral:currentPer.peripheral deviceType:SLPDeviceType_WIFIReston serverAddress:@"120.24.169.204" port:9010 wifiName:self.textfield1.text password:self.textfield2.text completion:^(BOOL succeed, id data) {
+    [con configPeripheral:currentPer.peripheral deviceType:SLPDeviceType_WIFIReston serverAddress:self.textfield3.text port:self.textfield4.text.integerValue wifiName:self.textfield1.text password:self.textfield2.text completion:^(BOOL succeed, id data) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSString *result=@"";
         if (succeed) {
@@ -123,7 +137,7 @@
 {
     [UIView animateWithDuration:0.5 animations:^{
         CGRect rect=self.view.frame;
-        CGFloat y_value=rect.origin.y-120;
+        CGFloat y_value=rect.origin.y-210;
         rect.origin.y=y_value;
         self.view.frame=rect;
     }];
@@ -133,12 +147,28 @@
 {
     [UIView animateWithDuration:0.3 animations:^{
         CGRect rect=self.view.frame;
-        CGFloat y_value=rect.origin.y+120;
+        CGFloat y_value=rect.origin.y+210;
         rect.origin.y=y_value;
         self.view.frame=rect;
     }];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (NSString * )backAddressFromID
+{
+    return @"120.24.169.204";
+}
+
+- (NSInteger )backPortFromID
+{
+    return 9010;
+}
 #pragma mark -ScanDeviceDelegate
 - (void)didSelectPeripheal:(SLPPeripheralInfo *)peripheralInfo
 {
