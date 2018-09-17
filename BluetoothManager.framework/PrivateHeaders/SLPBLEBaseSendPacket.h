@@ -21,7 +21,7 @@
 @property (nonatomic,assign) NSInteger protocalType;//协议类型 对应版本 //SLPBLEProtocalType
 @property (nonatomic,assign) NSInteger framType;//帧类型 SLPFramTypes
 @property (nonatomic,assign) NSInteger messageType;//消息类型
-@property (nonatomic,readonly) NSInteger sequence;//消息序号
+@property (nonatomic,assign) NSInteger sequence;//消息序号
 @property (nonatomic,strong) NSData *content;//消息内容 //纯内容，一些参数
 //控制用的
 //自定义的消息类型~ 和蓝牙的消息一一对应

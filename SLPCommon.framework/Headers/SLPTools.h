@@ -28,6 +28,12 @@ static const NSInteger kHttpAddressLength = 128;
 + (int8_t)byteToInt8:(Byte *)byte;
 +(short)bytesToShort:(Byte *)src;
 
+//将int8字符串array转化成data
++ (NSData *)contentDataFromIntArray:(NSArray<NSString *> *)array;
+//将NSData转化成Uint8字符串的array
++ (NSArray *)uint8ArrayFromData:(NSData *)data;
+
+
 //清空mutableData
 + (void)emptyMutableData:(NSMutableData *)mutData;
 //从dataBuffer中移除range范围的数据
@@ -67,4 +73,8 @@ static const NSInteger kHttpAddressLength = 128;
 + (NSString *)parseDeviceIDWithOffset:(NSInteger)offset data:(NSData *)data ;
 + (NSString *)parseSSIDWithOffset:(NSInteger)offset data:(NSData *)data ;
 + (NSString *)parseMacAddressWithOffset:(NSInteger)offset data:(NSData *)data;
+
++ (UInt8)validDeviceBrightness:(NSInteger)brightness;
++ (UInt8)validDeviceVolume:(NSInteger)volume;
++ (NSString *)MACItemFrom:(UInt8)item;
 @end

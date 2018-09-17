@@ -14,6 +14,9 @@
 #import "SDCCPEnums.h"
 #import "SLPBLEBaseEntity.h"
 #import "SLPBLEManager+Connect.h"
+#import "SLPBLEScanObject.h"
+#import "SLPBaseMusicModel.h"
+#import "SLPAudioPlayerCommon.h"
 
 #if (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0)
 #define CBCentralManagerStateUnknown   CBManagerStateUnknown

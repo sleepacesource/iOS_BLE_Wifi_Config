@@ -15,3 +15,7 @@
 #import "SLPDataTransferCommon.h"
 #import "SLPDataTransferDef.h"
 #import "SLPDeviceInfo.h"
+#import "SLPLight.h"
+#import "SLPTimeInfo.h"
+#import "SLPSleepaceMusicInfo.h"
+#import "Loop.h"

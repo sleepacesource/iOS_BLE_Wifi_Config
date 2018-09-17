@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ConfigureWiFiViewController.h"
+#import "ChooseDeviceTypeVC.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    ConfigureWiFiViewController *configureVC=[[ConfigureWiFiViewController alloc]init];
-    UINavigationController *unc = [[UINavigationController alloc]initWithRootViewController:configureVC];
+    ChooseDeviceTypeVC *rootVC=[[ChooseDeviceTypeVC alloc]init];
+    UINavigationController *unc = [[UINavigationController alloc]initWithRootViewController:rootVC];
     unc.navigationBar.hidden=YES;
     self.window.rootViewController = unc;
     [self.window  makeKeyAndVisible];
