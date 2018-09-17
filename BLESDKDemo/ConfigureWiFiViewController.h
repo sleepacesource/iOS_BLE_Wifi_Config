@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <BLEWifiConfig/SLPBleWifiConfig.h>
 
 @interface ConfigureWiFiViewController : UIViewController
-
+@property (nonatomic, assign) SLPDeviceTypes deviceType;
+@property (nonatomic, copy) NSString *serverAddress;
+@property (nonatomic, assign) int port;
 @end

@@ -60,7 +60,7 @@
 }
 
 - (IBAction)back:(id)sender {
-    
+    [SLPBLESharedManager stopAllPeripheralScan];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

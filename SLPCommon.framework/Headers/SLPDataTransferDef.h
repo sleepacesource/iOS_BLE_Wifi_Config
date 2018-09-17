@@ -70,6 +70,11 @@ typedef NS_ENUM(NSInteger,SLPDeviceTypes) {
     SLPDeviceType_Z4 = 0x0016,//22
     SLPDeviceType_Z5 = 0x001A,///z5
     SLPDeviceType_Z6 = 0x001B,///z6
+    SLPDeviceType_Sal = 0x0017, // 香薰灯 WiFi版
+    SLPDeviceType_Sal_Ble = 0x0018, // 香薰灯 蓝牙版
+    SLPDeviceType_EW201B = 0x001D,//唤醒灯 蓝牙版
+    SLPDeviceType_EW201W = 0x001E,//唤醒灯 WiFi版
+    SLPDeviceType_Binatone = 0x0021,//贝纳通
 };
 
 //样本数据的人群类型 目前只有男性和女性
