@@ -46,7 +46,7 @@
     [self.portTextField setHidden:!showPort];
     
     self.serverLabel.text = @"Server Address";
-    self.serverTextfield.text = @"120.24.169.204";
+    self.serverTextfield.text = @"ccct.sleepace.com";
     self.portLabel.text = @"Port";
     self.portTextField.keyboardType = UIKeyboardTypeNumberPad;
     self.portTextField.text = @"9010";

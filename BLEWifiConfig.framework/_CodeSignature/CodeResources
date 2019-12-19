@@ -10,11 +10,11 @@
 		</data>
 		<key>Headers/SLPBleWifiConfig.h</key>
 		<data>
-		HgELmfpU89O4IwLwL6cJCL1aBbo=
+		46nocmXsKDKZwW/813nXoI7Waf4=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Tw7JN+Jk5sDMT+P5TdZBFK/KkI4=
+		JtVkwMEtXNg8iAsmdj+55/AemwM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -38,11 +38,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HgELmfpU89O4IwLwL6cJCL1aBbo=
+			46nocmXsKDKZwW/813nXoI7Waf4=
 			</data>
 			<key>hash2</key>
 			<data>
-			DrSnST+AjzwzLlZBo0Twxr4JXwDup7ihrr928B6R2hY=
+			ysT3mkK+RGrj3/51iiH0gJa+GGEO0UaXyv7TziLxj20=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -59,7 +59,7 @@
 	</dict>
 	<key>rules</key>
 	<dict>
-		<key>^</key>
+		<key>^.*</key>
 		<true/>
 		<key>^.*\.lproj/</key>
 		<dict>
@@ -90,24 +90,12 @@
 			<key>weight</key>
 			<real>11</real>
 		</dict>
-		<key>^</key>
-		<dict>
-			<key>weight</key>
-			<real>20</real>
-		</dict>
 		<key>^(.*/)?\.DS_Store$</key>
 		<dict>
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
 			<real>2000</real>
-		</dict>
-		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^.*</key>
 		<true/>
@@ -143,13 +131,6 @@
 			<true/>
 			<key>weight</key>
 			<real>20</real>
-		</dict>
-		<key>^[^/]+$</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^embedded\.provisionprofile$</key>
 		<dict>
