@@ -1,20 +1,14 @@
 #import <Foundation/Foundation.h>
 #include <sys/time.h>
 
-#define  kMAX_CACHE_LOG_COUNT     1      //日志队列里，最大缓存日志数，达到就写文件
+typedef NS_ENUM(NSInteger,KFLogerLevel) {
+    KFLogerLevel_Disable = 0x0,
+    KFLogerLevel_PrintConsole = 0x01,
+    KFLogerLevel_WriteFile = 0x02,
+    KFLogerLevel_All = 0x03,
+};
 
-
-//  #define  KFLOG_OPEN                       // 总的日志开关，确认发布时根据需要是否关闭
-
-//#define  KFLOG_PRINT_CONSOLE              // 总的控制台打印日志开关
-
-//#define  KFLOG_ALL_WRITE_FILE             // 控制所有的日志都写文件,注意只是测试时使用打开 默认关闭
-
-//用于控制开发级别log的开关,级别从0到2逐渐增加
-#define  kOPEN_DEV_0
-#define  kOPEN_DEV_1
-#define  kOPEN_DEV_2
-
+extern KFLogerLevel g_Loglevel;
 
 //日志的信息类型
 enum KFLoger_Type
@@ -85,9 +79,7 @@ enum KFLoger_Type
 @end
 
 
-
-
-#ifdef SLP_DEBUG_KFLOG_OPEN    //打开所有的日志开关
+#define KFSetLogerLevel(level) (g_Loglevel = level)
 
 //封装一个宏,  外部不要直接调用这个宏
 #define KFLog(type, needSave,logContent,...)                                                    \
@@ -104,12 +96,6 @@ enum KFLoger_Type
                 }                                                                               \
             }                                                                                   \
 
-
-#else
-
-#define  KFLog(type, needSave, logContent,...)
-
-#endif
 
 
 

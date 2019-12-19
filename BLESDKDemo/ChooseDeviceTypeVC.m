@@ -25,6 +25,7 @@
       [DeviceInfo deviceInfoWith:@"Z300" deviceType:SLPDeviceType_WIFIReston],
       [DeviceInfo deviceInfoWith:@"EW201W" deviceType:SLPDeviceType_EW201W],
       [DeviceInfo deviceInfoWith:@"SA1001" deviceType:SLPDeviceType_Sal],
+      [DeviceInfo deviceInfoWith:@"M800" deviceType:SLPDeviceType_M800]
       ];
 }
 

@@ -17,6 +17,8 @@
 @end
 
 @interface SLPBLEBaseSendPacket : NSObject
+//新协议才有的
+@property (nonatomic,assign) SLPDeviceTypes deviceType;//设备类型 目前binatone和新协议才有 其他有的没有 binatone做了特殊处理
 @property (nonatomic,weak) id<SLPBLEBaseSendPacketDelegate> delegate;
 @property (nonatomic,assign) NSInteger protocalType;//协议类型 对应版本 //SLPBLEProtocalType
 @property (nonatomic,assign) NSInteger framType;//帧类型 SLPFramTypes

@@ -17,4 +17,11 @@
                 wifiName:(NSString *)name
                 password:(NSString *)password
               completion:(void(^)(BOOL succeed, id data))completion;
+
+- (void)configPeripheral:(CBPeripheral *)peripheral deviceType:(SLPDeviceTypes)deviceType
+                wifiName:(NSString *)name
+                password:(NSString *)password
+              completion:(void(^)(BOOL succeed, id data))completion;
+
+
 @end
